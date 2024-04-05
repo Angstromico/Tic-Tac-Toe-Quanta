@@ -2,6 +2,7 @@
 import { useSound } from '@vueuse/sound'
 import buttonSound from '/ball.wav'
 import windSound from '/win.wav'
+const { locale } = useI18n()
 
 const { play: playBtn } = useSound(buttonSound)
 const { play: winPlay } = useSound(windSound)
@@ -70,8 +71,12 @@ function checkWinner() {
 }
 const winnerMsg = computed(() => {
   const winner = valueXO.value === 'X' ? 'O' : 'X'
-  const msgW = `The winner is ${winner}!`
-  const msgDraw = 'The game is a draw!'
+  const msgW =
+    locale.value === 'en'
+      ? `The winner is ${winner}!`
+      : `El ganador es ${winner}!`
+  const msgDraw =
+    locale.value === 'en' ? 'The game is a draw!' : 'El juego quedo empatado!'
   return gameOver.value ? msgW : msgDraw
 })
 const beginGame = (start: boolean) => (startGame.value = start)
