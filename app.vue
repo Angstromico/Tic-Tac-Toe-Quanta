@@ -154,7 +154,7 @@ main {
   @apply rounded mt-8 text-center px-5 py-3 bg-[#54536D] text-white font-bold text-2xl hover:bg-[#C6CE62] transition-all;
 }
 .winner {
-  @apply absolute bottom-12 text-6xl text-[#FFD700] font-black left-0 w-full text-center;
+  @apply absolute bottom-12 text-3xl md:text-4xl text-[#FFD700] font-black left-0 w-full text-center;
   animation: fadeIn 2s forwards;
 }
 
